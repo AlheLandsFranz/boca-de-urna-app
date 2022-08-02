@@ -1,23 +1,13 @@
-import userModel from "./models.js";
+import User from "./models.js";
 import { Router } from "express";
-
+import newVote from "./newVote.js"
 const router = Router()
 
-// ...
-router.post("/vote", async (request, response) => {
-    const user = new userModel(request.body);
-  
-    try {
-      await user.save();
-      response.send(user);
-    } catch (error) {
-      response.status(500).send(error);
-    }
-});
+router.use('/vote', newVote)
 
 // ...
 router.get("/total-votes", async (request, response) => {
-    const users = await userModel.find({});
+    const users = await User.find({});
   
     try {
       response.send(users);

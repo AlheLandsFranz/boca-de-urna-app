@@ -1,9 +1,9 @@
 import server from "./app.js"
+import dotenv from 'dotenv'
+dotenv.config()
+let { PORT } = process.env;
 
-try {
-    server.listen(process.env.PORT || 3001, () => {
-        console.log("Server on port", process.env.PORT || 3001)
+    server.listen(3001, () => {
+        console.log("Server on port", PORT || 3001)
     });
-} catch (error) {
-    console.log(error)
-}
+

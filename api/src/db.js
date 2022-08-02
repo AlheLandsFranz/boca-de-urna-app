@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
-// import dotenv from 'dotenv'
-// dotenv.config()
-// const { PORT } = process.env;
+import dotenv from 'dotenv'
+dotenv.config()
+let { URL_MONGO } = process.env;
 // import { MongoClient, ServerApiVersion } from 'mongodb';
+
 
 
 
@@ -21,7 +22,7 @@ export const connectDB = async () => {
 //     await client.close();
 //   }
 mongoose
-  .connect(process.env.PORT, {
+  .connect(URL_MONGO, {
     useUnifiedTopology: true,
     useNewUrlParser: true
   })

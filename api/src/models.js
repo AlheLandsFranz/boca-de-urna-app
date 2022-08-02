@@ -12,6 +12,10 @@ const UserSchema = new mongoose.Schema({
   sex: {
     type: String,
     required: true
+  },
+  school: {
+    type: String,
+    required: true
   }
 });
 
