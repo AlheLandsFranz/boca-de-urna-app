@@ -21,7 +21,8 @@ export default function VoteForm(){
             setForm({
                 edad: 0,
                 genero: '',
-                lista: ''
+                lista: '',
+                escuela: ''
             })
         }
     }
@@ -50,6 +51,9 @@ export default function VoteForm(){
                 <Input type='select'>
                     <option value="default">Cuál lista votaste?</option>
                 </Input>
+                </div>
+                <div className="g-col-3" style={{paddingTop: '1em', width: '15em'}}>
+                <Input type='text' placeholder='En cuál escuela?'/>
                 </div>
                 <div className="g-col-3" style={{paddingTop: '1em', width: '15em'}}>
                 <h6 style={{fontSize: '0.8em'}}>

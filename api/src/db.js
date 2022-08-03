@@ -3,23 +3,25 @@ import dotenv from 'dotenv'
 dotenv.config({ path: '.env' })
 let { URL_MONGO } = process.env;
 
-export const connectDB = async () => {
+async function connectDB() {
 
-mongoose
-  .connect(URL_MONGO, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-  })
-  .then(() => {
-    console.log("DB Connected!");
-    let connection = mongoose.connection;
-    console.log(connection, "connnection")
+  mongoose
+    .connect(URL_MONGO, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true
     })
-  .catch(err => {
-    console.log(err);
-  });
+    .then(() => {
+      console.log("DB Connected!");
+      let connection = mongoose.connection;
+      console.log(connection, "connnection");
+    })
+    .catch(err => {
+      console.log(err);
+    });
 
 }
+
+export default connectDB;
 
 // connectDB().catch(console.dir);
 
