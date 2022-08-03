@@ -20,6 +20,6 @@ server.use(cors(
   }
 ))
 
-server.use('/', router);
+server.use('/api/', router);
 
 export default server;

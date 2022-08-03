@@ -8,10 +8,12 @@
     "mongodb": "^4.8.1",
     "mongoose": "^6.4.0",
     "node.js": "^0.0.1-security",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "serve": "^14.0.1"
   },
   "scripts": {
-    "start": "node ./index.js"
+    "dev": "nodemon ./index.js",
+    "start": "node index.js"
   },
   "name": "api",
   "version": "1.0.0",

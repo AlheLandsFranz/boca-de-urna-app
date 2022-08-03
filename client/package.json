@@ -12,26 +12,20 @@
     "popper.js": "^1.16.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
     "reactstrap": "^9.1.2",
-    "web-vitals": "^2.1.4",
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.5",
-    "@babel/node": "^7.15.4",
-    "@babel/preset-env": "^7.15.6"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.5",
-    "@babel/node": "^7.15.4",
-    "@babel/preset-env": "^7.15.6"
+    "serve": "^14.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "babel-node app.js --exec",
-    "dev": "nodemon app.js",
-    "devbabel": "nodemon app.js --exec babel-node"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [

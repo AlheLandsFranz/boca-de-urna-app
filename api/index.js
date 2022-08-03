@@ -1,9 +1,15 @@
 import server from "./app.js"
 import dotenv from 'dotenv'
-dotenv.config()
+
+dotenv.config({ path: '.env' })
+
 let { PORT } = process.env;
 
-    server.listen(3001, () => {
-        console.log("Server on port", PORT || 3001)
+// Leer variable host o port
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 3001;
+
+    server.listen(port, () => {
+        console.log("Server on port", port || 3001)
     });
 
