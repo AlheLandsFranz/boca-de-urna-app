@@ -1,12 +1,17 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Container, Form, Input, Button  } from 'reactstrap';
+import { postUserVote } from '../redux/actions/actions';
 
 export default function VoteForm(){
+
+    const dispatch = useDispatch()
 
     const [ form, setForm ] = useState({
         edad: 0,
         genero: '',
-        lista: ''
+        lista: '',
+        escuela: ''
     })
 
     function handleSelect(e){
@@ -16,7 +21,8 @@ export default function VoteForm(){
 
     function handleSubmit(e){
         e.preventDefault()
-        if(form.edad !== 0 && form.genero && form.lista){
+        if( form.edad !== 0 && form.genero && form.lista && form.escuela ){
+            dispatch(postUserVote(form))
             alert('Tu respuesta fue guardada con éxito!')
             setForm({
                 edad: 0,
@@ -50,6 +56,13 @@ export default function VoteForm(){
                 <div className="g-col-3" style={{paddingTop: '1em', width: '15em'}}>
                 <Input type='select'>
                     <option value="default">Cuál lista votaste?</option>
+                    {
+                        ['Frente Renovador y Progresista', 'Partido Unido de los Trabajadores', 'Frente Cívico',
+                    'Juntos por el Cambio', 'Partido Obrero', 'Frente de Izquierda y Trabajadores', 'Partido Unidos',
+                'Partido Encuentro Popular(Libertarios)'].map( l => {
+                   return (<option value={l}>{l}</option>)
+                })
+                    }
                 </Input>
                 </div>
                 <div className="g-col-3" style={{paddingTop: '1em', width: '15em'}}>
