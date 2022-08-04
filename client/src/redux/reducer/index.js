@@ -1,7 +1,7 @@
 
-const initalState = {
+const initialState = {
     vote: {},
-    votes: []
+    allVotes: []
 }
 
 
@@ -14,9 +14,10 @@ const rootReducer = (state = initialState, action) => {
               vote: action.payload
           };
           case 'GET_ALL_VOTES':
+            console.log(action.payload, 'paaaaaay')
             return {
               ...state,
-                votes: action.payload
+              allVotes: action.payload
             };
       default:
           return state;

@@ -1,0 +1,19 @@
+
+.allVotes{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.vote{
+    display: flex;
+    padding: 2px;
+    margin: 2px;
+    background-color: bisque;
+}
+
+.vote p{
+    padding: 2px;
+}
